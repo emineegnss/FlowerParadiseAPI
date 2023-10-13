@@ -1,4 +1,4 @@
-namespace FLowerParadiseAPI.API
+namespace FlowerParadiseAPI.API
 {
     public class WeatherForecast
     {

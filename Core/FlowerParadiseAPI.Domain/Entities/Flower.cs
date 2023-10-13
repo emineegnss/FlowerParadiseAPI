@@ -13,7 +13,8 @@ namespace FlowerParadiseAPI.Domain.Entities
         public int Stock { get; set; }
 
         public float Price { get; set; }
-
-        
+        public ICollection<Color> Colors { get; set; }
+        public Guid SpeciesId { get; set; }
+        public FlowerSpecies Species { get; set; }
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FlowerParadiseAPI.Domain.Entities
 {
-    public class FlowerSpecies : BaseEntity
+    public class Color : BaseEntity
     {
-        public string SpeciesName { get; set; }
+        public string ColorName { get; set; }
         public ICollection<Flower> Flowers { get; set; }
     }
 }
