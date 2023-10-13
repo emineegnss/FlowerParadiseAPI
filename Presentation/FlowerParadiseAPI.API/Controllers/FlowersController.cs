@@ -18,14 +18,15 @@ namespace FlowerParadiseAPI.API.Controllers
             _flowerSpeciesRepository = flowerSpeciesRepository;
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var speciesId = Guid.NewGuid();
-            _flowerSpeciesRepository.AddAsync(new() { Id = speciesId, SpeciesName = "Gül", CreateDate = DateTime.UtcNow });
+            //var speciesId = Guid.NewGuid();
+            //await _flowerSpeciesRepository.AddAsync(new() { Id = speciesId, SpeciesName = "Gül", CreateDate = DateTime.UtcNow });
 
-            _flowerRepository.AddAsync(new() { Id = Guid.NewGuid(), Name = "Gül 1", Price = 12, Stock = 15,CreateDate=DateTime.UtcNow,SpeciesId=speciesId}) ;
-            _flowerSpeciesRepository.SaveAsync();
-            return Ok(_flowerRepository.GetAll(false));
+            //await _flowerRepository.AddAsync(new() { Name = "Gül 1", Price = 12, Stock = 15,CreateDate=DateTime.UtcNow,SpeciesId=speciesId}) ;
+            
+            // await _flowerSpeciesRepository.SaveAsync();
+            return Ok(_flowerRepository.GetAll());
         }
     }
 }
