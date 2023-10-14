@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlowerParadiseAPI.Persistence.Migrations
 {
     [DbContext(typeof(FlowerParadiseDbContext))]
-    [Migration("20231013103129_mig_1")]
+    [Migration("20231014184805_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -53,6 +53,9 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.ToTable("Colors");
@@ -78,6 +81,9 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -109,6 +115,9 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     b.Property<int>("Stock")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
@@ -131,6 +140,9 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.ToTable("Species");
@@ -151,6 +163,9 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 

@@ -17,7 +17,8 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     ColorName = table.Column<string>(type: "text", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,7 +33,8 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     FirstName = table.Column<string>(type: "text", nullable: false),
                     LastName = table.Column<string>(type: "text", nullable: false),
                     Address = table.Column<string>(type: "text", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +47,8 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     SpeciesName = table.Column<string>(type: "text", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,7 +62,8 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     CustomerId = table.Column<Guid>(type: "uuid", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -82,7 +86,8 @@ namespace FlowerParadiseAPI.Persistence.Migrations
                     Price = table.Column<float>(type: "real", nullable: false),
                     SpeciesId = table.Column<Guid>(type: "uuid", nullable: false),
                     OrderId = table.Column<Guid>(type: "uuid", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
