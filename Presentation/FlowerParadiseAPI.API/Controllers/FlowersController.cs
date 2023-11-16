@@ -30,7 +30,7 @@ namespace FlowerParadiseAPI.API.Controllers
             Flower flower = await _flowerRepository.GetByIdAsync("6330b86e-a91b-4647-b0d5-ba66e4072089");
             flower.Name = "Gül 2";
             _flowerRepository.SaveAsync();
-            return Ok();
+            return Ok("Hi!");
         }
     }
 }
