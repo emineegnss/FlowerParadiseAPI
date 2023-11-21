@@ -30,7 +30,12 @@ namespace FlowerParadiseAPI.API.Controllers
             //Flower flower = await _flowerRepository.GetByIdAsync("6330b86e-a91b-4647-b0d5-ba66e4072089");
             //flower.Name = "Gül 2";
             //_flowerRepository.SaveAsync();
-            return Ok(_flowerRepository.GetAll());
+            return Ok(_flowerRepository.GetAll(false));
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            return Ok(await _flowerRepository.GetByIdAsync(id,false)); ;
         }
         [HttpPost]
         public async Task<IActionResult> Post(VM_Create_Flower model)
@@ -45,9 +50,23 @@ namespace FlowerParadiseAPI.API.Controllers
             return StatusCode((int)HttpStatusCode.Created);
         }
         [HttpPut]
-        public async Task<IActionResult> Put()
+        public async Task<IActionResult> Put(VM_Update_Flower model)
         {
+           Flower flower =await _flowerRepository.GetByIdAsync(model.Id);
+            flower.Stock = model.Stock;
+            flower.Price = model.Price;
+            flower.Name = model.Name;
+            await _flowerRepository.SaveAsync();
 
+            return Ok();
+
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _flowerRepository.Remove(id);
+            await _flowerRepository.SaveAsync();
+            return Ok();
         }
     }
 }
