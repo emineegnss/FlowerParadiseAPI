@@ -1,4 +1,6 @@
+using FlowerParadiseAPI.Application.Validators.Flowers;
 using FlowerParadiseAPI.Persistence;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Options;
 
 namespace FlowerParadiseAPI.API
@@ -12,7 +14,8 @@ namespace FlowerParadiseAPI.API
             // Add services to the container.
             builder.Services.AddPersistenceServices();
             builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod()));
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddFluentValidation(configuration =>configuration.RegisterValidatorsFromAssemblyContaining<CreateFlowerValidator>());
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
