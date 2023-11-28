@@ -42,6 +42,10 @@ namespace FlowerParadiseAPI.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(VM_Create_Flower model)
         {
+            if (ModelState.IsValid) 
+            {
+                
+            }
             var speciesId = Guid.NewGuid();
             await _flowerSpeciesRepository.AddAsync(new() { Id = speciesId, SpeciesName = "Çiçek", CreateDate = DateTime.UtcNow });
 

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\FlowerParadiseAPI.Infrastructure\FlowerParadiseAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\FlowerParadiseAPI.Persistence\FlowerParadiseAPI.Persistence.csproj" />
   </ItemGroup>
 
